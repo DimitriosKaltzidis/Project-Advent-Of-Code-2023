@@ -8,13 +8,13 @@ Console.WriteLine($"Part 2: {GetPartTwo(lines)}");
 
 static int GetPartOne(List<string> lines)
 {
-	int sum = 0;
+	var sum = 0;
 
 	foreach (var line in lines)
 	{
-		MatchCollection matches = Regex.Matches(line, @"\d+");
-		string firstNumber = matches[0].Value;
-		string lastNumber = matches[matches.Count - 1].Value;
+		var matches = Regex.Matches(line, @"\d+");
+		var firstNumber = matches[0].Value;
+		var lastNumber = matches[matches.Count - 1].Value;
 		int.TryParse($"{firstNumber[0]}{lastNumber[lastNumber.Length - 1]}", out var number);
 		sum += number;
 	}
@@ -24,7 +24,7 @@ static int GetPartOne(List<string> lines)
 
 static int GetPartTwo(List<string> lines)
 {
-	var calibrationValues = new List<string> { };
+	var calibrationValues = new List<string>();
 
 	foreach (string line in lines)
 	{
@@ -34,7 +34,6 @@ static int GetPartTwo(List<string> lines)
 
 		if (first.Length > 1) first = ConvertWordToDigit(first);
 		if (last.Length > 1) last = ConvertWordToDigit(last);
-
 		if (first.Length > 0) calibrationValues.Add(first + last);
 	}
 

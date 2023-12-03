@@ -6,7 +6,7 @@
 
 		public List<Set> Sets { get; set; } = new List<Set>();
 
-		public void AddSet(Set turn) { Sets.Add(turn); }
+		public void AddSet(Set set) { Sets.Add(set); }
 
 		public int GetTotalCubeNumberOfColorDrawn(CubeColor cubeColor) { return Sets.Sum(x => x.GetNumberOfCubesOfColor(cubeColor)); }
 

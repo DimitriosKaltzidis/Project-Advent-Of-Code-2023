@@ -1,5 +1,4 @@
-﻿// Read and parse data
-using AdventOfCode.Common;
+﻿using AdventOfCode.Common;
 using AdventOfCode.Day2;
 using System.Text.RegularExpressions;
 
@@ -17,12 +16,8 @@ int GetPartOne(List<Game> games)
 	var part1Restraints = new Dictionary<CubeColor, int>() { { CubeColor.Red, 12 }, { CubeColor.Green, 13 }, { CubeColor.Blue, 14 } };
 
 	foreach (var game in games)
-	{
 		if (game.IsGamePossibleFor(part1Restraints))
-		{
 			part1 += game.Id;
-		}
-	}
 
 	return part1;
 }
